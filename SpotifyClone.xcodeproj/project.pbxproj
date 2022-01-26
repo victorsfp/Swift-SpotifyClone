@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6F83895C697BEE0DA07BA325 /* Pods_SpotifyClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C10CCEE84CCE7514F332A4F5 /* Pods_SpotifyClone.framework */; };
+		845D6A7927A1909A002C7410 /* NewReleasesCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D6A7827A1909A002C7410 /* NewReleasesCellViewModel.swift */; };
 		846C1E4F279AF4BB00E511EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846C1E4E279AF4BB00E511EB /* AppDelegate.swift */; };
 		846C1E51279AF4BB00E511EB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846C1E50279AF4BB00E511EB /* SceneDelegate.swift */; };
 		846C1E53279AF4BB00E511EB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846C1E52279AF4BB00E511EB /* HomeViewController.swift */; };
@@ -45,6 +46,7 @@
 
 /* Begin PBXFileReference section */
 		5AD0E4E979C2D93BFDDEB128 /* Pods-SpotifyClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpotifyClone.debug.xcconfig"; path = "Target Support Files/Pods-SpotifyClone/Pods-SpotifyClone.debug.xcconfig"; sourceTree = "<group>"; };
+		845D6A7827A1909A002C7410 /* NewReleasesCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReleasesCellViewModel.swift; sourceTree = "<group>"; };
 		846C1E4B279AF4BB00E511EB /* SpotifyClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpotifyClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		846C1E4E279AF4BB00E511EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		846C1E50279AF4BB00E511EB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 		846C1E64279AF50900E511EB /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				845D6A7827A1909A002C7410 /* NewReleasesCellViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -369,6 +372,7 @@
 				846C1E6B279AF72600E511EB /* SearchViewController.swift in Sources */,
 				846C1E86279AF89C00E511EB /* Playlist.swift in Sources */,
 				846C1E7F279AF80E00E511EB /* AuthManager.swift in Sources */,
+				845D6A7927A1909A002C7410 /* NewReleasesCellViewModel.swift in Sources */,
 				846C1E7D279AF7F200E511EB /* SearchResultsViewController.swift in Sources */,
 				846C1E73279AF79C00E511EB /* WelcomeViewController.swift in Sources */,
 				846C1E77279AF7B600E511EB /* ProfileViewController.swift in Sources */,
