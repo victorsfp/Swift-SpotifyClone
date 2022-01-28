@@ -20,6 +20,57 @@ final class APICaller {
         case faileedToGetData
     }
     
+    //MARK: - Albums
+    public func getAlbumDetails(for album: Album, completion: @escaping(Result<AlbumDetailsResponse, Error>) -> Void){
+        createRequest(with: URL(string: Constanst.baseAPIURL + "/albums/" + album.id), type: .GET) { request in
+            let task = URLSession.shared.dataTask(with: request) { data, _, error in
+                guard let data = data, error == nil else {
+                    completion(.failure(APIError.faileedToGetData))
+                    return
+                }
+                
+                do {
+                    //let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
+                    //print(json)
+                    let result = try JSONDecoder().decode(AlbumDetailsResponse.self, from: data)
+                    completion(.success(result))
+                } catch {
+                    print(error)
+                    completion(.failure(error))
+                }
+                
+            }
+            
+            task.resume()
+        }
+    }
+    
+    //MARK: - Playlists
+    public func getPlaylistDetails(for playlist: Playlist, completion: @escaping(Result<PlaylistDetailsResponse, Error>) -> Void){
+        createRequest(with: URL(string: Constanst.baseAPIURL + "/playlists/" + playlist.id), type: .GET) { request in
+            let task = URLSession.shared.dataTask(with: request) { data, _, error in
+                guard let data = data, error == nil else {
+                    completion(.failure(APIError.faileedToGetData))
+                    return
+                }
+                
+                do {
+                    //let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
+                    //print(json)
+                    let result = try JSONDecoder().decode(PlaylistDetailsResponse.self, from: data)
+                    completion(.success(result))
+                } catch {
+                    print(error)
+                    completion(.failure(error))
+                }
+                
+            }
+            
+            task.resume()
+        }
+    }
+    
+    //MARK: - Profile
     public func getCurrentProfile(completion: @escaping (Result<UserProfile, Error>) -> Void){
         createRequest(
             with: URL(string: Constanst.baseAPIURL + "/me"), type: .GET) { baseRequest in
@@ -44,6 +95,7 @@ final class APICaller {
             }
     }
     
+    //MARK: - Browse
     public func getNewReleases(completion: @escaping ((Result<NewReleasesResponse, Error>)) -> Void){
         createRequest(with: URL(string: Constanst.baseAPIURL + "/browse/new-releases?limit=50"), type: .GET) { request in
             let task = URLSession.shared.dataTask(with: request) { data, _, error in
